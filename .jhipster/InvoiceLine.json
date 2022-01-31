@@ -1,0 +1,91 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192405",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "invoice_line",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "salesTotal",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "total",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "valueDifference",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalTaxableFees",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "netTotal",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "itemsDiscount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "internalCode",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "InvoiceLine",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "value",
+      "otherEntityRelationshipName": "invoiceLine",
+      "ownerSide": true,
+      "relationshipName": "unitValue",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "discount",
+      "otherEntityRelationshipName": "invoiceLine",
+      "ownerSide": true,
+      "relationshipName": "discount",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "taxableItem",
+      "otherEntityRelationshipName": "invoiceLine",
+      "relationshipName": "taxableItems",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "invoiceLines",
+      "relationshipName": "document",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity WorkflowParameters.
+    -->
+    <changeSet id="20220131192357-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="document_type_version_id"
+                                 baseTableName="workflow_parameters"
+                                 constraintName="fk_workflow_parameters__document_type_version_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document_type_version"/>
+    </changeSet>
+</databaseChangeLog>

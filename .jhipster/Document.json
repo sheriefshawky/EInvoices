@@ -1,0 +1,127 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192358",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "document",
+  "fields": [
+    {
+      "fieldName": "documentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "documentTypeVersion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateTimeIssued",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "taxpayerActivityCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "internalId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purchaseOrderReference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "purchaseOrderDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salesOrderReference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "salesOrderDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "proformaInvoiceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "totalSalesAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalDiscountAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "netAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "extraDiscountAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalItemsDiscountAmount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalAmount",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Document",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "issuer",
+      "otherEntityRelationshipName": "document",
+      "ownerSide": true,
+      "relationshipName": "issuer",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "receiver",
+      "otherEntityRelationshipName": "document",
+      "ownerSide": true,
+      "relationshipName": "receiver",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "document",
+      "ownerSide": true,
+      "relationshipName": "payment",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "delivery",
+      "otherEntityRelationshipName": "document",
+      "ownerSide": true,
+      "relationshipName": "delivery",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "invoiceLine",
+      "otherEntityRelationshipName": "document",
+      "relationshipName": "invoiceLines",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "taxTotal",
+      "otherEntityRelationshipName": "document",
+      "relationshipName": "taxTotals",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "signature",
+      "otherEntityRelationshipName": "document",
+      "relationshipName": "signatures",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

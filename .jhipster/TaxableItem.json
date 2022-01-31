@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192408",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "taxable_item",
+  "fields": [
+    {
+      "fieldName": "taxType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "subType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TaxableItem",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "invoiceLine",
+      "otherEntityRelationshipName": "taxableItems",
+      "relationshipName": "invoiceLine",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

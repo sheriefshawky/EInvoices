@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity TaxableItem.
+    -->
+    <changeSet id="20220131192408-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="invoice_line_id"
+                                 baseTableName="taxable_item"
+                                 constraintName="fk_taxable_item__invoice_line_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="invoice_line"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,53 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192356",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "document_type_version",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "versionNumber",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activeFrom",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "activeTo",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DocumentTypeVersion",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "workflowParameters",
+      "otherEntityRelationshipName": "documentTypeVersion",
+      "relationshipName": "workflowParameters",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "documentType",
+      "otherEntityRelationshipName": "documentTypeVersions",
+      "relationshipName": "documentType",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

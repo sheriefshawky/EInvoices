@@ -7,6 +7,22 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "الكيانات",
+        "documentType": "Document Type",
+        "documentTypeVersion": "Document Type Version",
+        "workflowParameters": "Workflow Parameters",
+        "document": "Document",
+        "issuer": "Issuer",
+        "issuerAddress": "Issuer Address",
+        "receiver": "Receiver",
+        "receiverAddress": "Receiver Address",
+        "payment": "Payment",
+        "delivery": "Delivery",
+        "invoiceLine": "Invoice Line",
+        "value": "Value",
+        "discount": "Discount",
+        "taxableItem": "Taxable Item",
+        "taxTotal": "Tax Total",
+        "signature": "Signature",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
