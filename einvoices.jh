@@ -1,0 +1,183 @@
+
+
+
+entity DocumentType{
+    name String,
+    description String,
+    activeFrom Instant,
+    activeTo Instant,
+}
+
+entity DocumentTypeVersion{
+    name String,
+    description String,
+    versionNumber BigDecimal,
+    status String,
+    activeFrom Instant,
+    activeTo Instant
+}
+
+entity WorkflowParameters{
+	parameter String,
+    value Long,
+    activeFrom Instant,
+    activeTo Instant
+}
+
+
+entity Document{
+	documentType String,
+    documentTypeVersion String,
+    dateTimeIssued Instant,
+    taxpayerActivityCode String,
+    internalId String,
+    purchaseOrderReference String,
+    purchaseOrderDescription String,
+    salesOrderReference String,
+    salesOrderDescription String,
+    proformaInvoiceNumber String,
+    totalSalesAmount BigDecimal,
+    totalDiscountAmount BigDecimal,
+    netAmount BigDecimal,
+    extraDiscountAmount BigDecimal,
+    totalItemsDiscountAmount BigDecimal,
+    totalAmount BigDecimal
+}
+
+entity Issuer{
+	type String,
+    name String
+}
+
+entity IssuerAddress{
+	branchId String,
+    country String,
+    governate String,
+    regionCity String,
+    street String,
+    buildingNumber String,
+    postalCode String,
+    floor String,
+    room String,
+    landmark String,
+    additionalInformation String
+}
+
+entity Receiver{
+	type String,
+    name String
+}
+
+entity ReceiverAddress{
+	country String,
+    governate String,
+    regionCity String,
+    street String,
+    buildingNumber String,
+    postalCode String,
+    floor String,
+    room String,
+	landmark String,
+    additionalInformation String
+}
+
+entity Payment{
+	bankName String,
+    bankAddress String,
+    bankAccountNo String,
+    bankAccountIBAN String,
+    swiftCode String,
+    terms String
+}
+
+entity Delivery{
+	approach String,
+    packaging String,
+    dateValidity String,
+    exportPort String,
+    countryOfOrigin String,
+    grossWeight String,
+    netWeight BigDecimal,
+    terms String
+}
+
+entity InvoiceLine{
+	description String,
+    itemType String,
+    itemCode String,
+    unitType String,
+    quantity BigDecimal,
+    salesTotal BigDecimal,
+    total BigDecimal,
+    valueDifference BigDecimal,
+    totalTaxableFees BigDecimal,
+    netTotal BigDecimal,
+    itemsDiscount BigDecimal,
+    internalCode String
+}
+
+entity Value{
+	currencySold String,
+    amountEGP BigDecimal,
+    amountSold BigDecimal,
+    currencyExchangeRate BigDecimal
+    
+}
+
+entity Discount{
+	rate BigDecimal,
+    amount BigDecimal
+}
+
+entity TaxableItem{
+	taxType String,
+    amount BigDecimal,
+    subType String,
+    rate BigDecimal
+}
+
+entity TaxTotal{
+	taxType String,
+    amount BigDecimal
+}
+
+entity Signature{
+	type String,
+    value String
+}
+
+relationship OneToOne {
+	Issuer{address} to IssuerAddress
+    Document{issuer} to Issuer,
+    Document{receiver} to Receiver,
+    Document{payment} to Payment,
+    Document{delivery} to Delivery,
+    Receiver{address} to ReceiverAddress,
+    InvoiceLine{unitValue} to Value,
+    InvoiceLine{discount} to Discount
+    
+}
+
+relationship OneToMany {
+	DocumentType{documentTypeVersions} to DocumentTypeVersion,
+    DocumentTypeVersion{workflowParameters} to WorkflowParameters,
+    Document{invoiceLines} to InvoiceLine,
+    Document{taxTotals} to TaxTotals,
+    Document{signatures} to Signature,
+    InvoiceLine{taxableItems} to TaxableItem,
+    Document{taxTotals} to TaxTotal
+}
+
+
+// Set pagination options
+//paginate JobHistory, Employee with infinite-scroll
+//paginate Job with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
