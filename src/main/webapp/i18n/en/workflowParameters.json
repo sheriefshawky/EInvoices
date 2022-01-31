@@ -1,0 +1,28 @@
+{
+  "eInvoicesApp": {
+    "workflowParameters": {
+      "home": {
+        "title": "Workflow Parameters",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Workflow Parameters",
+        "createOrEditLabel": "Create or edit a Workflow Parameters",
+        "notFound": "No Workflow Parameters found"
+      },
+      "created": "A new Workflow Parameters is created with identifier {{ param }}",
+      "updated": "A Workflow Parameters is updated with identifier {{ param }}",
+      "deleted": "A Workflow Parameters is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Workflow Parameters {{ id }}?"
+      },
+      "detail": {
+        "title": "Workflow Parameters"
+      },
+      "id": "ID",
+      "parameter": "Parameter",
+      "value": "Value",
+      "activeFrom": "Active From",
+      "activeTo": "Active To",
+      "documentTypeVersion": "Document Type Version"
+    }
+  }
+}

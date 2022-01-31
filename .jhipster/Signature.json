@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192410",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "signature",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Signature",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "signatures",
+      "relationshipName": "document",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

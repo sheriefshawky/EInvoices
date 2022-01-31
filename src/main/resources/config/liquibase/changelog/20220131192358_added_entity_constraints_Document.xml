@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Document.
+    -->
+    <changeSet id="20220131192358-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="issuer_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__issuer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="issuer"/>
+
+        <addForeignKeyConstraint baseColumnNames="receiver_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__receiver_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="receiver"/>
+
+        <addForeignKeyConstraint baseColumnNames="payment_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__payment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment"/>
+
+        <addForeignKeyConstraint baseColumnNames="delivery_id"
+                                 baseTableName="document"
+                                 constraintName="fk_document__delivery_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="delivery"/>
+    </changeSet>
+</databaseChangeLog>

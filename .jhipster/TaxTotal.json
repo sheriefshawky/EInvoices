@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192409",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "tax_total",
+  "fields": [
+    {
+      "fieldName": "taxType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "TaxTotal",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "taxTotals",
+      "relationshipName": "document",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

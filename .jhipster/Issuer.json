@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192359",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "issuer",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Issuer",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "issuerAddress",
+      "otherEntityRelationshipName": "issuer",
+      "ownerSide": true,
+      "relationshipName": "address",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,56 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192402",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "receiver_address",
+  "fields": [
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "governate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regionCity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "street",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "buildingNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "floor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "room",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "landmark",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "additionalInformation",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ReceiverAddress",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

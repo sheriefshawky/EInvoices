@@ -1,0 +1,46 @@
+{
+  "eInvoicesApp": {
+    "document": {
+      "home": {
+        "title": "Documents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Document",
+        "createOrEditLabel": "Create or edit a Document",
+        "notFound": "No Documents found"
+      },
+      "created": "A new Document is created with identifier {{ param }}",
+      "updated": "A Document is updated with identifier {{ param }}",
+      "deleted": "A Document is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Document {{ id }}?"
+      },
+      "detail": {
+        "title": "Document"
+      },
+      "id": "ID",
+      "documentType": "Document Type",
+      "documentTypeVersion": "Document Type Version",
+      "dateTimeIssued": "Date Time Issued",
+      "taxpayerActivityCode": "Taxpayer Activity Code",
+      "internalId": "Internal Id",
+      "purchaseOrderReference": "Purchase Order Reference",
+      "purchaseOrderDescription": "Purchase Order Description",
+      "salesOrderReference": "Sales Order Reference",
+      "salesOrderDescription": "Sales Order Description",
+      "proformaInvoiceNumber": "Proforma Invoice Number",
+      "totalSalesAmount": "Total Sales Amount",
+      "totalDiscountAmount": "Total Discount Amount",
+      "netAmount": "Net Amount",
+      "extraDiscountAmount": "Extra Discount Amount",
+      "totalItemsDiscountAmount": "Total Items Discount Amount",
+      "totalAmount": "Total Amount",
+      "issuer": "Issuer",
+      "receiver": "Receiver",
+      "payment": "Payment",
+      "delivery": "Delivery",
+      "invoiceLines": "Invoice Lines",
+      "taxTotals": "Tax Totals",
+      "signatures": "Signatures"
+    }
+  }
+}

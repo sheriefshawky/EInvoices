@@ -1,0 +1,34 @@
+{
+  "eInvoicesApp": {
+    "issuerAddress": {
+      "home": {
+        "title": "Issuer Addresses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Issuer Address",
+        "createOrEditLabel": "Create or edit a Issuer Address",
+        "notFound": "No Issuer Addresses found"
+      },
+      "created": "A new Issuer Address is created with identifier {{ param }}",
+      "updated": "A Issuer Address is updated with identifier {{ param }}",
+      "deleted": "A Issuer Address is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Issuer Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Issuer Address"
+      },
+      "id": "ID",
+      "branchId": "Branch Id",
+      "country": "Country",
+      "governate": "Governate",
+      "regionCity": "Region City",
+      "street": "Street",
+      "buildingNumber": "Building Number",
+      "postalCode": "Postal Code",
+      "floor": "Floor",
+      "room": "Room",
+      "landmark": "Landmark",
+      "additionalInformation": "Additional Information"
+    }
+  }
+}

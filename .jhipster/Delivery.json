@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192404",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "delivery",
+  "fields": [
+    {
+      "fieldName": "approach",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "packaging",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateValidity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "exportPort",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryOfOrigin",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grossWeight",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "netWeight",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "terms",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Delivery",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

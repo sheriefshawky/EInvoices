@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192355",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "document_type",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activeFrom",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "activeTo",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "DocumentType",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "documentTypeVersion",
+      "otherEntityRelationshipName": "documentType",
+      "relationshipName": "documentTypeVersions",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

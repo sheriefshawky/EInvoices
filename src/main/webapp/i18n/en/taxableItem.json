@@ -1,0 +1,28 @@
+{
+  "eInvoicesApp": {
+    "taxableItem": {
+      "home": {
+        "title": "Taxable Items",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Taxable Item",
+        "createOrEditLabel": "Create or edit a Taxable Item",
+        "notFound": "No Taxable Items found"
+      },
+      "created": "A new Taxable Item is created with identifier {{ param }}",
+      "updated": "A Taxable Item is updated with identifier {{ param }}",
+      "deleted": "A Taxable Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Taxable Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Taxable Item"
+      },
+      "id": "ID",
+      "taxType": "Tax Type",
+      "amount": "Amount",
+      "subType": "Sub Type",
+      "rate": "Rate",
+      "invoiceLine": "Invoice Line"
+    }
+  }
+}

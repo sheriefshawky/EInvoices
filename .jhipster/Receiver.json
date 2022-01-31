@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192401",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "receiver",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Receiver",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "receiverAddress",
+      "otherEntityRelationshipName": "receiver",
+      "ownerSide": true,
+      "relationshipName": "address",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

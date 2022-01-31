@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192406",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "value",
+  "fields": [
+    {
+      "fieldName": "currencySold",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountEGP",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "amountSold",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "currencyExchangeRate",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Value",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

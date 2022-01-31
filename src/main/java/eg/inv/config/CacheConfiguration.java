@@ -48,6 +48,28 @@ public class CacheConfiguration {
             createCache(cm, eg.inv.domain.User.class.getName());
             createCache(cm, eg.inv.domain.Authority.class.getName());
             createCache(cm, eg.inv.domain.User.class.getName() + ".authorities");
+            createCache(cm, eg.inv.domain.DocumentType.class.getName());
+            createCache(cm, eg.inv.domain.DocumentType.class.getName() + ".documentTypeVersions");
+            createCache(cm, eg.inv.domain.DocumentTypeVersion.class.getName());
+            createCache(cm, eg.inv.domain.DocumentTypeVersion.class.getName() + ".workflowParameters");
+            createCache(cm, eg.inv.domain.WorkflowParameters.class.getName());
+            createCache(cm, eg.inv.domain.Document.class.getName());
+            createCache(cm, eg.inv.domain.Document.class.getName() + ".invoiceLines");
+            createCache(cm, eg.inv.domain.Document.class.getName() + ".taxTotals");
+            createCache(cm, eg.inv.domain.Document.class.getName() + ".signatures");
+            createCache(cm, eg.inv.domain.Issuer.class.getName());
+            createCache(cm, eg.inv.domain.IssuerAddress.class.getName());
+            createCache(cm, eg.inv.domain.Receiver.class.getName());
+            createCache(cm, eg.inv.domain.ReceiverAddress.class.getName());
+            createCache(cm, eg.inv.domain.Payment.class.getName());
+            createCache(cm, eg.inv.domain.Delivery.class.getName());
+            createCache(cm, eg.inv.domain.InvoiceLine.class.getName());
+            createCache(cm, eg.inv.domain.InvoiceLine.class.getName() + ".taxableItems");
+            createCache(cm, eg.inv.domain.Value.class.getName());
+            createCache(cm, eg.inv.domain.Discount.class.getName());
+            createCache(cm, eg.inv.domain.TaxableItem.class.getName());
+            createCache(cm, eg.inv.domain.TaxTotal.class.getName());
+            createCache(cm, eg.inv.domain.Signature.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

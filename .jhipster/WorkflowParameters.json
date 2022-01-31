@@ -1,0 +1,39 @@
+{
+  "applications": "*",
+  "changelogDate": "20220131192357",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "workflow_parameters",
+  "fields": [
+    {
+      "fieldName": "parameter",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "activeFrom",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "activeTo",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "WorkflowParameters",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "documentTypeVersion",
+      "otherEntityRelationshipName": "workflowParameters",
+      "relationshipName": "documentTypeVersion",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
