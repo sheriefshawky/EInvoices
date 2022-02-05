@@ -63,7 +63,7 @@ public class InvoiceLine implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Value unitValue;
+    private ItemValue unitValue;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -252,16 +252,16 @@ public class InvoiceLine implements Serializable {
         this.internalCode = internalCode;
     }
 
-    public Value getUnitValue() {
+    public ItemValue getUnitValue() {
         return this.unitValue;
     }
 
-    public void setUnitValue(Value value) {
-        this.unitValue = value;
+    public void setUnitValue(ItemValue itemValue) {
+        this.unitValue = itemValue;
     }
 
-    public InvoiceLine unitValue(Value value) {
-        this.setUnitValue(value);
+    public InvoiceLine unitValue(ItemValue itemValue) {
+        this.setUnitValue(itemValue);
         return this;
     }
 

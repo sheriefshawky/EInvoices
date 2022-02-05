@@ -20,6 +20,7 @@ import Discount from './discount';
 import TaxableItem from './taxable-item';
 import TaxTotal from './tax-total';
 import Signature from './signature';
+import ItemValue from './item-value';
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
 const Routes = ({ match }) => (
@@ -42,6 +43,7 @@ const Routes = ({ match }) => (
       <ErrorBoundaryRoute path={`${match.url}taxable-item`} component={TaxableItem} />
       <ErrorBoundaryRoute path={`${match.url}tax-total`} component={TaxTotal} />
       <ErrorBoundaryRoute path={`${match.url}signature`} component={Signature} />
+      <ErrorBoundaryRoute path={`${match.url}item-value`} component={ItemValue} />
       {/* jhipster-needle-add-route-path - JHipster will add routes here */}
     </Switch>
   </div>

@@ -23,6 +23,7 @@
         "taxableItem": "Taxable Item",
         "taxTotal": "Tax Total",
         "signature": "Signature",
+        "itemValue": "Item Value",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

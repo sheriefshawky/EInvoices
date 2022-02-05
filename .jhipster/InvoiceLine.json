@@ -61,7 +61,7 @@
   "readOnly": false,
   "relationships": [
     {
-      "otherEntityName": "value",
+      "otherEntityName": "itemValue",
       "otherEntityRelationshipName": "invoiceLine",
       "ownerSide": true,
       "relationshipName": "unitValue",

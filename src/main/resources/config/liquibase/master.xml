@@ -31,6 +31,7 @@
     <include file="config/liquibase/changelog/20220131192408_added_entity_TaxableItem.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220131192409_added_entity_TaxTotal.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220131192410_added_entity_Signature.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220205143658_added_entity_ItemValue.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20220131192356_added_entity_constraints_DocumentTypeVersion.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220131192357_added_entity_constraints_WorkflowParameters.xml" relativeToChangelogFile="false"/>
