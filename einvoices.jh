@@ -116,7 +116,7 @@ entity InvoiceLine{
     internalCode String
 }
 
-entity Value{
+entity ItemValue{
 	currencySold String,
     amountEGP BigDecimal,
     amountSold BigDecimal,
