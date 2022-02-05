@@ -19,7 +19,7 @@ entity DocumentTypeVersion{
 
 entity WorkflowParameters{
 	parameter String,
-    value Long,
+    wfValue Long,
     activeFrom Instant,
     activeTo Instant
 }
@@ -45,7 +45,7 @@ entity Document{
 }
 
 entity Issuer{
-	type String,
+	Issuertype String,
     name String
 }
 
@@ -64,7 +64,7 @@ entity IssuerAddress{
 }
 
 entity Receiver{
-	type String,
+	recieverType String,
     name String
 }
 
@@ -143,7 +143,7 @@ entity TaxTotal{
 
 entity Signature{
 	type String,
-    value String
+    sigValue String
 }
 
 relationship OneToOne {
