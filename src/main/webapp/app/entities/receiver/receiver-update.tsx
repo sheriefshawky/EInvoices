@@ -89,7 +89,13 @@ export const ReceiverUpdate = (props: RouteComponentProps<{ id: string }>) => {
                   validate={{ required: true }}
                 />
               ) : null}
-              <ValidatedField label={translate('eInvoicesApp.receiver.type')} id="receiver-type" name="type" data-cy="type" type="text" />
+              <ValidatedField
+                label={translate('eInvoicesApp.receiver.recieverType')}
+                id="receiver-recieverType"
+                name="recieverType"
+                data-cy="recieverType"
+                type="text"
+              />
               <ValidatedField label={translate('eInvoicesApp.receiver.name')} id="receiver-name" name="name" data-cy="name" type="text" />
               <ValidatedField
                 id="receiver-address"

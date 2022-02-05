@@ -38,8 +38,8 @@ public class IssuerServiceImpl implements IssuerService {
         return issuerRepository
             .findById(issuer.getId())
             .map(existingIssuer -> {
-                if (issuer.getType() != null) {
-                    existingIssuer.setType(issuer.getType());
+                if (issuer.getIssuertype() != null) {
+                    existingIssuer.setIssuertype(issuer.getIssuertype());
                 }
                 if (issuer.getName() != null) {
                     existingIssuer.setName(issuer.getName());

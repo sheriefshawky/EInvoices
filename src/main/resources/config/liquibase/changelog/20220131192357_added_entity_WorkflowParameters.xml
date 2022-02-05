@@ -17,7 +17,7 @@
             <column name="parameter" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="value" type="bigint">
+            <column name="wf_value" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="active_from" type="${datetimeType}">
@@ -53,7 +53,7 @@
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="parameter" type="string"/>
-            <column name="value" type="numeric"/>
+            <column name="wf_value" type="numeric"/>
             <column name="active_from" type="date"/>
             <column name="active_to" type="date"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->

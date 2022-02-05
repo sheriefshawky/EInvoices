@@ -6,7 +6,7 @@
   "entityTableName": "receiver",
   "fields": [
     {
-      "fieldName": "type",
+      "fieldName": "recieverType",
       "fieldType": "String"
     },
     {

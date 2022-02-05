@@ -2,7 +2,7 @@ import { IReceiverAddress } from 'app/shared/model/receiver-address.model';
 
 export interface IReceiver {
   id?: number;
-  type?: string | null;
+  recieverType?: string | null;
   name?: string | null;
   address?: IReceiverAddress | null;
 }

@@ -30,11 +30,11 @@ export const IssuerDetail = (props: RouteComponentProps<{ id: string }>) => {
           </dt>
           <dd>{issuerEntity.id}</dd>
           <dt>
-            <span id="type">
-              <Translate contentKey="eInvoicesApp.issuer.type">Type</Translate>
+            <span id="issuertype">
+              <Translate contentKey="eInvoicesApp.issuer.issuertype">Issuertype</Translate>
             </span>
           </dt>
-          <dd>{issuerEntity.type}</dd>
+          <dd>{issuerEntity.issuertype}</dd>
           <dt>
             <span id="name">
               <Translate contentKey="eInvoicesApp.issuer.name">Name</Translate>

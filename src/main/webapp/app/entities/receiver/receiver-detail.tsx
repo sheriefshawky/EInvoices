@@ -30,11 +30,11 @@ export const ReceiverDetail = (props: RouteComponentProps<{ id: string }>) => {
           </dt>
           <dd>{receiverEntity.id}</dd>
           <dt>
-            <span id="type">
-              <Translate contentKey="eInvoicesApp.receiver.type">Type</Translate>
+            <span id="recieverType">
+              <Translate contentKey="eInvoicesApp.receiver.recieverType">Reciever Type</Translate>
             </span>
           </dt>
-          <dd>{receiverEntity.type}</dd>
+          <dd>{receiverEntity.recieverType}</dd>
           <dt>
             <span id="name">
               <Translate contentKey="eInvoicesApp.receiver.name">Name</Translate>

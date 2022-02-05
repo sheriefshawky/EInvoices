@@ -41,8 +41,8 @@ public class WorkflowParametersServiceImpl implements WorkflowParametersService 
                 if (workflowParameters.getParameter() != null) {
                     existingWorkflowParameters.setParameter(workflowParameters.getParameter());
                 }
-                if (workflowParameters.getValue() != null) {
-                    existingWorkflowParameters.setValue(workflowParameters.getValue());
+                if (workflowParameters.getWfValue() != null) {
+                    existingWorkflowParameters.setWfValue(workflowParameters.getWfValue());
                 }
                 if (workflowParameters.getActiveFrom() != null) {
                     existingWorkflowParameters.setActiveFrom(workflowParameters.getActiveFrom());

@@ -10,7 +10,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "value",
+      "fieldName": "sigValue",
       "fieldType": "String"
     }
   ],

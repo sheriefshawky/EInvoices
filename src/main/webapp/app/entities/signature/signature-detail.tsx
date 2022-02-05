@@ -36,11 +36,11 @@ export const SignatureDetail = (props: RouteComponentProps<{ id: string }>) => {
           </dt>
           <dd>{signatureEntity.type}</dd>
           <dt>
-            <span id="value">
-              <Translate contentKey="eInvoicesApp.signature.value">Value</Translate>
+            <span id="sigValue">
+              <Translate contentKey="eInvoicesApp.signature.sigValue">Sig Value</Translate>
             </span>
           </dt>
-          <dd>{signatureEntity.value}</dd>
+          <dd>{signatureEntity.sigValue}</dd>
           <dt>
             <Translate contentKey="eInvoicesApp.signature.document">Document</Translate>
           </dt>

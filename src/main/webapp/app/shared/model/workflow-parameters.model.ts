@@ -4,7 +4,7 @@ import { IDocumentTypeVersion } from 'app/shared/model/document-type-version.mod
 export interface IWorkflowParameters {
   id?: number;
   parameter?: string | null;
-  value?: number | null;
+  wfValue?: number | null;
   activeFrom?: string | null;
   activeTo?: string | null;
   documentTypeVersion?: IDocumentTypeVersion | null;

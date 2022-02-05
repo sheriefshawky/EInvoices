@@ -25,8 +25,8 @@ public class Signature implements Serializable {
     @Column(name = "type")
     private String type;
 
-    @Column(name = "value")
-    private String value;
+    @Column(name = "sig_value")
+    private String sigValue;
 
     @ManyToOne
     @JsonIgnoreProperties(
@@ -63,17 +63,17 @@ public class Signature implements Serializable {
         this.type = type;
     }
 
-    public String getValue() {
-        return this.value;
+    public String getSigValue() {
+        return this.sigValue;
     }
 
-    public Signature value(String value) {
-        this.setValue(value);
+    public Signature sigValue(String sigValue) {
+        this.setSigValue(sigValue);
         return this;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setSigValue(String sigValue) {
+        this.sigValue = sigValue;
     }
 
     public Document getDocument() {
@@ -114,7 +114,7 @@ public class Signature implements Serializable {
         return "Signature{" +
             "id=" + getId() +
             ", type='" + getType() + "'" +
-            ", value='" + getValue() + "'" +
+            ", sigValue='" + getSigValue() + "'" +
             "}";
     }
 }

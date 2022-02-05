@@ -34,8 +34,8 @@ class WorkflowParametersResourceIT {
     private static final String DEFAULT_PARAMETER = "AAAAAAAAAA";
     private static final String UPDATED_PARAMETER = "BBBBBBBBBB";
 
-    private static final Long DEFAULT_VALUE = 1L;
-    private static final Long UPDATED_VALUE = 2L;
+    private static final Long DEFAULT_WF_VALUE = 1L;
+    private static final Long UPDATED_WF_VALUE = 2L;
 
     private static final Instant DEFAULT_ACTIVE_FROM = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_ACTIVE_FROM = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -69,7 +69,7 @@ class WorkflowParametersResourceIT {
     public static WorkflowParameters createEntity(EntityManager em) {
         WorkflowParameters workflowParameters = new WorkflowParameters()
             .parameter(DEFAULT_PARAMETER)
-            .value(DEFAULT_VALUE)
+            .wfValue(DEFAULT_WF_VALUE)
             .activeFrom(DEFAULT_ACTIVE_FROM)
             .activeTo(DEFAULT_ACTIVE_TO);
         return workflowParameters;
@@ -84,7 +84,7 @@ class WorkflowParametersResourceIT {
     public static WorkflowParameters createUpdatedEntity(EntityManager em) {
         WorkflowParameters workflowParameters = new WorkflowParameters()
             .parameter(UPDATED_PARAMETER)
-            .value(UPDATED_VALUE)
+            .wfValue(UPDATED_WF_VALUE)
             .activeFrom(UPDATED_ACTIVE_FROM)
             .activeTo(UPDATED_ACTIVE_TO);
         return workflowParameters;
@@ -111,7 +111,7 @@ class WorkflowParametersResourceIT {
         assertThat(workflowParametersList).hasSize(databaseSizeBeforeCreate + 1);
         WorkflowParameters testWorkflowParameters = workflowParametersList.get(workflowParametersList.size() - 1);
         assertThat(testWorkflowParameters.getParameter()).isEqualTo(DEFAULT_PARAMETER);
-        assertThat(testWorkflowParameters.getValue()).isEqualTo(DEFAULT_VALUE);
+        assertThat(testWorkflowParameters.getWfValue()).isEqualTo(DEFAULT_WF_VALUE);
         assertThat(testWorkflowParameters.getActiveFrom()).isEqualTo(DEFAULT_ACTIVE_FROM);
         assertThat(testWorkflowParameters.getActiveTo()).isEqualTo(DEFAULT_ACTIVE_TO);
     }
@@ -149,7 +149,7 @@ class WorkflowParametersResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(workflowParameters.getId().intValue())))
             .andExpect(jsonPath("$.[*].parameter").value(hasItem(DEFAULT_PARAMETER)))
-            .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE.intValue())))
+            .andExpect(jsonPath("$.[*].wfValue").value(hasItem(DEFAULT_WF_VALUE.intValue())))
             .andExpect(jsonPath("$.[*].activeFrom").value(hasItem(DEFAULT_ACTIVE_FROM.toString())))
             .andExpect(jsonPath("$.[*].activeTo").value(hasItem(DEFAULT_ACTIVE_TO.toString())));
     }
@@ -167,7 +167,7 @@ class WorkflowParametersResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(workflowParameters.getId().intValue()))
             .andExpect(jsonPath("$.parameter").value(DEFAULT_PARAMETER))
-            .andExpect(jsonPath("$.value").value(DEFAULT_VALUE.intValue()))
+            .andExpect(jsonPath("$.wfValue").value(DEFAULT_WF_VALUE.intValue()))
             .andExpect(jsonPath("$.activeFrom").value(DEFAULT_ACTIVE_FROM.toString()))
             .andExpect(jsonPath("$.activeTo").value(DEFAULT_ACTIVE_TO.toString()));
     }
@@ -193,7 +193,7 @@ class WorkflowParametersResourceIT {
         em.detach(updatedWorkflowParameters);
         updatedWorkflowParameters
             .parameter(UPDATED_PARAMETER)
-            .value(UPDATED_VALUE)
+            .wfValue(UPDATED_WF_VALUE)
             .activeFrom(UPDATED_ACTIVE_FROM)
             .activeTo(UPDATED_ACTIVE_TO);
 
@@ -210,7 +210,7 @@ class WorkflowParametersResourceIT {
         assertThat(workflowParametersList).hasSize(databaseSizeBeforeUpdate);
         WorkflowParameters testWorkflowParameters = workflowParametersList.get(workflowParametersList.size() - 1);
         assertThat(testWorkflowParameters.getParameter()).isEqualTo(UPDATED_PARAMETER);
-        assertThat(testWorkflowParameters.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testWorkflowParameters.getWfValue()).isEqualTo(UPDATED_WF_VALUE);
         assertThat(testWorkflowParameters.getActiveFrom()).isEqualTo(UPDATED_ACTIVE_FROM);
         assertThat(testWorkflowParameters.getActiveTo()).isEqualTo(UPDATED_ACTIVE_TO);
     }
@@ -285,7 +285,7 @@ class WorkflowParametersResourceIT {
         WorkflowParameters partialUpdatedWorkflowParameters = new WorkflowParameters();
         partialUpdatedWorkflowParameters.setId(workflowParameters.getId());
 
-        partialUpdatedWorkflowParameters.parameter(UPDATED_PARAMETER).value(UPDATED_VALUE).activeFrom(UPDATED_ACTIVE_FROM);
+        partialUpdatedWorkflowParameters.parameter(UPDATED_PARAMETER).wfValue(UPDATED_WF_VALUE).activeFrom(UPDATED_ACTIVE_FROM);
 
         restWorkflowParametersMockMvc
             .perform(
@@ -300,7 +300,7 @@ class WorkflowParametersResourceIT {
         assertThat(workflowParametersList).hasSize(databaseSizeBeforeUpdate);
         WorkflowParameters testWorkflowParameters = workflowParametersList.get(workflowParametersList.size() - 1);
         assertThat(testWorkflowParameters.getParameter()).isEqualTo(UPDATED_PARAMETER);
-        assertThat(testWorkflowParameters.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testWorkflowParameters.getWfValue()).isEqualTo(UPDATED_WF_VALUE);
         assertThat(testWorkflowParameters.getActiveFrom()).isEqualTo(UPDATED_ACTIVE_FROM);
         assertThat(testWorkflowParameters.getActiveTo()).isEqualTo(DEFAULT_ACTIVE_TO);
     }
@@ -319,7 +319,7 @@ class WorkflowParametersResourceIT {
 
         partialUpdatedWorkflowParameters
             .parameter(UPDATED_PARAMETER)
-            .value(UPDATED_VALUE)
+            .wfValue(UPDATED_WF_VALUE)
             .activeFrom(UPDATED_ACTIVE_FROM)
             .activeTo(UPDATED_ACTIVE_TO);
 
@@ -336,7 +336,7 @@ class WorkflowParametersResourceIT {
         assertThat(workflowParametersList).hasSize(databaseSizeBeforeUpdate);
         WorkflowParameters testWorkflowParameters = workflowParametersList.get(workflowParametersList.size() - 1);
         assertThat(testWorkflowParameters.getParameter()).isEqualTo(UPDATED_PARAMETER);
-        assertThat(testWorkflowParameters.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testWorkflowParameters.getWfValue()).isEqualTo(UPDATED_WF_VALUE);
         assertThat(testWorkflowParameters.getActiveFrom()).isEqualTo(UPDATED_ACTIVE_FROM);
         assertThat(testWorkflowParameters.getActiveTo()).isEqualTo(UPDATED_ACTIVE_TO);
     }

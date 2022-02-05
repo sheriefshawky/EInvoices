@@ -18,7 +18,7 @@
         "title": "Receiver"
       },
       "id": "ID",
-      "type": "Type",
+      "recieverType": "Reciever Type",
       "name": "Name",
       "address": "Address"
     }

@@ -91,10 +91,10 @@ export const SignatureUpdate = (props: RouteComponentProps<{ id: string }>) => {
               ) : null}
               <ValidatedField label={translate('eInvoicesApp.signature.type')} id="signature-type" name="type" data-cy="type" type="text" />
               <ValidatedField
-                label={translate('eInvoicesApp.signature.value')}
-                id="signature-value"
-                name="value"
-                data-cy="value"
+                label={translate('eInvoicesApp.signature.sigValue')}
+                id="signature-sigValue"
+                name="sigValue"
+                data-cy="sigValue"
                 type="text"
               />
               <ValidatedField

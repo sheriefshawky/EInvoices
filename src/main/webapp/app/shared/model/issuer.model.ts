@@ -2,7 +2,7 @@ import { IIssuerAddress } from 'app/shared/model/issuer-address.model';
 
 export interface IIssuer {
   id?: number;
-  type?: string | null;
+  issuertype?: string | null;
   name?: string | null;
   address?: IIssuerAddress | null;
 }

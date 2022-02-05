@@ -89,7 +89,13 @@ export const IssuerUpdate = (props: RouteComponentProps<{ id: string }>) => {
                   validate={{ required: true }}
                 />
               ) : null}
-              <ValidatedField label={translate('eInvoicesApp.issuer.type')} id="issuer-type" name="type" data-cy="type" type="text" />
+              <ValidatedField
+                label={translate('eInvoicesApp.issuer.issuertype')}
+                id="issuer-issuertype"
+                name="issuertype"
+                data-cy="issuertype"
+                type="text"
+              />
               <ValidatedField label={translate('eInvoicesApp.issuer.name')} id="issuer-name" name="name" data-cy="name" type="text" />
               <ValidatedField
                 id="issuer-address"

@@ -17,7 +17,7 @@
             <column name="type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="value" type="varchar(255)">
+            <column name="sig_value" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="document_id" type="bigint">
@@ -45,7 +45,7 @@
                   usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="type" type="string"/>
-            <column name="value" type="string"/>
+            <column name="sig_value" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

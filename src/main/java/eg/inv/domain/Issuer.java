@@ -21,8 +21,8 @@ public class Issuer implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "issuertype")
+    private String issuertype;
 
     @Column(name = "name")
     private String name;
@@ -46,17 +46,17 @@ public class Issuer implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return this.type;
+    public String getIssuertype() {
+        return this.issuertype;
     }
 
-    public Issuer type(String type) {
-        this.setType(type);
+    public Issuer issuertype(String issuertype) {
+        this.setIssuertype(issuertype);
         return this;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setIssuertype(String issuertype) {
+        this.issuertype = issuertype;
     }
 
     public String getName() {
@@ -109,7 +109,7 @@ public class Issuer implements Serializable {
     public String toString() {
         return "Issuer{" +
             "id=" + getId() +
-            ", type='" + getType() + "'" +
+            ", issuertype='" + getIssuertype() + "'" +
             ", name='" + getName() + "'" +
             "}";
     }

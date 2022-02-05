@@ -32,8 +32,8 @@ class SignatureResourceIT {
     private static final String DEFAULT_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_TYPE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_VALUE = "AAAAAAAAAA";
-    private static final String UPDATED_VALUE = "BBBBBBBBBB";
+    private static final String DEFAULT_SIG_VALUE = "AAAAAAAAAA";
+    private static final String UPDATED_SIG_VALUE = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/signatures";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -59,7 +59,7 @@ class SignatureResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Signature createEntity(EntityManager em) {
-        Signature signature = new Signature().type(DEFAULT_TYPE).value(DEFAULT_VALUE);
+        Signature signature = new Signature().type(DEFAULT_TYPE).sigValue(DEFAULT_SIG_VALUE);
         return signature;
     }
 
@@ -70,7 +70,7 @@ class SignatureResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Signature createUpdatedEntity(EntityManager em) {
-        Signature signature = new Signature().type(UPDATED_TYPE).value(UPDATED_VALUE);
+        Signature signature = new Signature().type(UPDATED_TYPE).sigValue(UPDATED_SIG_VALUE);
         return signature;
     }
 
@@ -93,7 +93,7 @@ class SignatureResourceIT {
         assertThat(signatureList).hasSize(databaseSizeBeforeCreate + 1);
         Signature testSignature = signatureList.get(signatureList.size() - 1);
         assertThat(testSignature.getType()).isEqualTo(DEFAULT_TYPE);
-        assertThat(testSignature.getValue()).isEqualTo(DEFAULT_VALUE);
+        assertThat(testSignature.getSigValue()).isEqualTo(DEFAULT_SIG_VALUE);
     }
 
     @Test
@@ -127,7 +127,7 @@ class SignatureResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(signature.getId().intValue())))
             .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)))
-            .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE)));
+            .andExpect(jsonPath("$.[*].sigValue").value(hasItem(DEFAULT_SIG_VALUE)));
     }
 
     @Test
@@ -143,7 +143,7 @@ class SignatureResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(signature.getId().intValue()))
             .andExpect(jsonPath("$.type").value(DEFAULT_TYPE))
-            .andExpect(jsonPath("$.value").value(DEFAULT_VALUE));
+            .andExpect(jsonPath("$.sigValue").value(DEFAULT_SIG_VALUE));
     }
 
     @Test
@@ -165,7 +165,7 @@ class SignatureResourceIT {
         Signature updatedSignature = signatureRepository.findById(signature.getId()).get();
         // Disconnect from session so that the updates on updatedSignature are not directly saved in db
         em.detach(updatedSignature);
-        updatedSignature.type(UPDATED_TYPE).value(UPDATED_VALUE);
+        updatedSignature.type(UPDATED_TYPE).sigValue(UPDATED_SIG_VALUE);
 
         restSignatureMockMvc
             .perform(
@@ -180,7 +180,7 @@ class SignatureResourceIT {
         assertThat(signatureList).hasSize(databaseSizeBeforeUpdate);
         Signature testSignature = signatureList.get(signatureList.size() - 1);
         assertThat(testSignature.getType()).isEqualTo(UPDATED_TYPE);
-        assertThat(testSignature.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testSignature.getSigValue()).isEqualTo(UPDATED_SIG_VALUE);
     }
 
     @Test
@@ -266,7 +266,7 @@ class SignatureResourceIT {
         assertThat(signatureList).hasSize(databaseSizeBeforeUpdate);
         Signature testSignature = signatureList.get(signatureList.size() - 1);
         assertThat(testSignature.getType()).isEqualTo(UPDATED_TYPE);
-        assertThat(testSignature.getValue()).isEqualTo(DEFAULT_VALUE);
+        assertThat(testSignature.getSigValue()).isEqualTo(DEFAULT_SIG_VALUE);
     }
 
     @Test
@@ -281,7 +281,7 @@ class SignatureResourceIT {
         Signature partialUpdatedSignature = new Signature();
         partialUpdatedSignature.setId(signature.getId());
 
-        partialUpdatedSignature.type(UPDATED_TYPE).value(UPDATED_VALUE);
+        partialUpdatedSignature.type(UPDATED_TYPE).sigValue(UPDATED_SIG_VALUE);
 
         restSignatureMockMvc
             .perform(
@@ -296,7 +296,7 @@ class SignatureResourceIT {
         assertThat(signatureList).hasSize(databaseSizeBeforeUpdate);
         Signature testSignature = signatureList.get(signatureList.size() - 1);
         assertThat(testSignature.getType()).isEqualTo(UPDATED_TYPE);
-        assertThat(testSignature.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testSignature.getSigValue()).isEqualTo(UPDATED_SIG_VALUE);
     }
 
     @Test

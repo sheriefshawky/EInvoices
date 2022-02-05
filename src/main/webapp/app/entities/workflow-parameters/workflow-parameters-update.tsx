@@ -105,10 +105,10 @@ export const WorkflowParametersUpdate = (props: RouteComponentProps<{ id: string
                 type="text"
               />
               <ValidatedField
-                label={translate('eInvoicesApp.workflowParameters.value')}
-                id="workflow-parameters-value"
-                name="value"
-                data-cy="value"
+                label={translate('eInvoicesApp.workflowParameters.wfValue')}
+                id="workflow-parameters-wfValue"
+                name="wfValue"
+                data-cy="wfValue"
                 type="text"
               />
               <ValidatedField
