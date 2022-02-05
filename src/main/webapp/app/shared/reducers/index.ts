@@ -43,6 +43,8 @@ import taxableItem from 'app/entities/taxable-item/taxable-item.reducer';
 import taxTotal from 'app/entities/tax-total/tax-total.reducer';
 // prettier-ignore
 import signature from 'app/entities/signature/signature.reducer';
+// prettier-ignore
+import itemValue from 'app/entities/item-value/item-value.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer = {
@@ -72,6 +74,7 @@ const rootReducer = {
   taxableItem,
   taxTotal,
   signature,
+  itemValue,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 };

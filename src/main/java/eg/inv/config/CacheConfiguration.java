@@ -70,6 +70,7 @@ public class CacheConfiguration {
             createCache(cm, eg.inv.domain.TaxableItem.class.getName());
             createCache(cm, eg.inv.domain.TaxTotal.class.getName());
             createCache(cm, eg.inv.domain.Signature.class.getName());
+            createCache(cm, eg.inv.domain.ItemValue.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

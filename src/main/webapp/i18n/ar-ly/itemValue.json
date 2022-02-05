@@ -1,0 +1,27 @@
+{
+  "eInvoicesApp": {
+    "itemValue": {
+      "home": {
+        "title": "Item Values",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Item Value",
+        "createOrEditLabel": "Create or edit a Item Value",
+        "notFound": "No Item Values found"
+      },
+      "created": "A new Item Value is created with identifier {{ param }}",
+      "updated": "A Item Value is updated with identifier {{ param }}",
+      "deleted": "A Item Value is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Item Value {{ id }}?"
+      },
+      "detail": {
+        "title": "Item Value"
+      },
+      "id": "ID",
+      "currencySold": "Currency Sold",
+      "amountEGP": "Amount EGP",
+      "amountSold": "Amount Sold",
+      "currencyExchangeRate": "Currency Exchange Rate"
+    }
+  }
+}

@@ -116,7 +116,7 @@ entity InvoiceLine{
     internalCode String
 }
 
-entity Value{
+entity ItemValue{
 	currencySold String,
     amountEGP BigDecimal,
     amountSold BigDecimal,
@@ -153,7 +153,7 @@ relationship OneToOne {
     Document{payment} to Payment,
     Document{delivery} to Delivery,
     Receiver{address} to ReceiverAddress,
-    InvoiceLine{unitValue} to Value,
+    InvoiceLine{unitValue} to ItemValue,
     InvoiceLine{discount} to Discount
     
 }

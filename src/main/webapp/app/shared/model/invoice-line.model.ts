@@ -1,4 +1,4 @@
-import { IValue } from 'app/shared/model/value.model';
+import { IItemValue } from 'app/shared/model/item-value.model';
 import { IDiscount } from 'app/shared/model/discount.model';
 import { ITaxableItem } from 'app/shared/model/taxable-item.model';
 import { IDocument } from 'app/shared/model/document.model';
@@ -17,7 +17,7 @@ export interface IInvoiceLine {
   netTotal?: number | null;
   itemsDiscount?: number | null;
   internalCode?: string | null;
-  unitValue?: IValue | null;
+  unitValue?: IItemValue | null;
   discount?: IDiscount | null;
   taxableItems?: ITaxableItem[] | null;
   document?: IDocument | null;

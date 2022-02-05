@@ -4,8 +4,8 @@ import { Button, Row, Col, FormText } from 'reactstrap';
 import { isNumber, Translate, translate, ValidatedField, ValidatedForm } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { IValue } from 'app/shared/model/value.model';
-import { getEntities as getValues } from 'app/entities/value/value.reducer';
+import { IItemValue } from 'app/shared/model/item-value.model';
+import { getEntities as getItemValues } from 'app/entities/item-value/item-value.reducer';
 import { IDiscount } from 'app/shared/model/discount.model';
 import { getEntities as getDiscounts } from 'app/entities/discount/discount.reducer';
 import { IDocument } from 'app/shared/model/document.model';
@@ -21,7 +21,7 @@ export const InvoiceLineUpdate = (props: RouteComponentProps<{ id: string }>) =>
 
   const [isNew] = useState(!props.match.params || !props.match.params.id);
 
-  const values = useAppSelector(state => state.value.entities);
+  const itemValues = useAppSelector(state => state.itemValue.entities);
   const discounts = useAppSelector(state => state.discount.entities);
   const documents = useAppSelector(state => state.document.entities);
   const invoiceLineEntity = useAppSelector(state => state.invoiceLine.entity);
@@ -39,7 +39,7 @@ export const InvoiceLineUpdate = (props: RouteComponentProps<{ id: string }>) =>
       dispatch(getEntity(props.match.params.id));
     }
 
-    dispatch(getValues({}));
+    dispatch(getItemValues({}));
     dispatch(getDiscounts({}));
     dispatch(getDocuments({}));
   }, []);
@@ -54,7 +54,7 @@ export const InvoiceLineUpdate = (props: RouteComponentProps<{ id: string }>) =>
     const entity = {
       ...invoiceLineEntity,
       ...values,
-      unitValue: values.find(it => it.id.toString() === values.unitValue.toString()),
+      unitValue: itemValues.find(it => it.id.toString() === values.unitValue.toString()),
       discount: discounts.find(it => it.id.toString() === values.discount.toString()),
       document: documents.find(it => it.id.toString() === values.document.toString()),
     };
@@ -193,8 +193,8 @@ export const InvoiceLineUpdate = (props: RouteComponentProps<{ id: string }>) =>
                 type="select"
               >
                 <option value="" key="0" />
-                {values
-                  ? values.map(otherEntity => (
+                {itemValues
+                  ? itemValues.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
                         {otherEntity.id}
                       </option>

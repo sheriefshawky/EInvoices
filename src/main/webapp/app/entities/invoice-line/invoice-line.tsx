@@ -117,7 +117,9 @@ export const InvoiceLine = (props: RouteComponentProps<{ url: string }>) => {
                   <td>{invoiceLine.netTotal}</td>
                   <td>{invoiceLine.itemsDiscount}</td>
                   <td>{invoiceLine.internalCode}</td>
-                  <td>{invoiceLine.unitValue ? <Link to={`value/${invoiceLine.unitValue.id}`}>{invoiceLine.unitValue.id}</Link> : ''}</td>
+                  <td>
+                    {invoiceLine.unitValue ? <Link to={`item-value/${invoiceLine.unitValue.id}`}>{invoiceLine.unitValue.id}</Link> : ''}
+                  </td>
                   <td>{invoiceLine.discount ? <Link to={`discount/${invoiceLine.discount.id}`}>{invoiceLine.discount.id}</Link> : ''}</td>
                   <td>{invoiceLine.document ? <Link to={`document/${invoiceLine.document.id}`}>{invoiceLine.document.id}</Link> : ''}</td>
                   <td className="text-end">
