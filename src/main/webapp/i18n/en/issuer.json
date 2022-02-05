@@ -18,7 +18,7 @@
         "title": "Issuer"
       },
       "id": "ID",
-      "type": "Type",
+      "issuertype": "Issuertype",
       "name": "Name",
       "address": "Address"
     }

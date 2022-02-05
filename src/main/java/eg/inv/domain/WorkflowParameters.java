@@ -26,8 +26,8 @@ public class WorkflowParameters implements Serializable {
     @Column(name = "parameter")
     private String parameter;
 
-    @Column(name = "value")
-    private Long value;
+    @Column(name = "wf_value")
+    private Long wfValue;
 
     @Column(name = "active_from")
     private Instant activeFrom;
@@ -67,17 +67,17 @@ public class WorkflowParameters implements Serializable {
         this.parameter = parameter;
     }
 
-    public Long getValue() {
-        return this.value;
+    public Long getWfValue() {
+        return this.wfValue;
     }
 
-    public WorkflowParameters value(Long value) {
-        this.setValue(value);
+    public WorkflowParameters wfValue(Long wfValue) {
+        this.setWfValue(wfValue);
         return this;
     }
 
-    public void setValue(Long value) {
-        this.value = value;
+    public void setWfValue(Long wfValue) {
+        this.wfValue = wfValue;
     }
 
     public Instant getActiveFrom() {
@@ -144,7 +144,7 @@ public class WorkflowParameters implements Serializable {
         return "WorkflowParameters{" +
             "id=" + getId() +
             ", parameter='" + getParameter() + "'" +
-            ", value=" + getValue() +
+            ", wfValue=" + getWfValue() +
             ", activeFrom='" + getActiveFrom() + "'" +
             ", activeTo='" + getActiveTo() + "'" +
             "}";

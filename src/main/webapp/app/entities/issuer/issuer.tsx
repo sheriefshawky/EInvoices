@@ -50,7 +50,7 @@ export const Issuer = (props: RouteComponentProps<{ url: string }>) => {
                   <Translate contentKey="eInvoicesApp.issuer.id">ID</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="eInvoicesApp.issuer.type">Type</Translate>
+                  <Translate contentKey="eInvoicesApp.issuer.issuertype">Issuertype</Translate>
                 </th>
                 <th>
                   <Translate contentKey="eInvoicesApp.issuer.name">Name</Translate>
@@ -69,7 +69,7 @@ export const Issuer = (props: RouteComponentProps<{ url: string }>) => {
                       {issuer.id}
                     </Button>
                   </td>
-                  <td>{issuer.type}</td>
+                  <td>{issuer.issuertype}</td>
                   <td>{issuer.name}</td>
                   <td>{issuer.address ? <Link to={`issuer-address/${issuer.address.id}`}>{issuer.address.id}</Link> : ''}</td>
                   <td className="text-end">

@@ -53,7 +53,7 @@ export const Signature = (props: RouteComponentProps<{ url: string }>) => {
                   <Translate contentKey="eInvoicesApp.signature.type">Type</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="eInvoicesApp.signature.value">Value</Translate>
+                  <Translate contentKey="eInvoicesApp.signature.sigValue">Sig Value</Translate>
                 </th>
                 <th>
                   <Translate contentKey="eInvoicesApp.signature.document">Document</Translate>
@@ -70,7 +70,7 @@ export const Signature = (props: RouteComponentProps<{ url: string }>) => {
                     </Button>
                   </td>
                   <td>{signature.type}</td>
-                  <td>{signature.value}</td>
+                  <td>{signature.sigValue}</td>
                   <td>{signature.document ? <Link to={`document/${signature.document.id}`}>{signature.document.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">

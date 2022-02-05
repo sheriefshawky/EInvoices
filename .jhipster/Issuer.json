@@ -6,7 +6,7 @@
   "entityTableName": "issuer",
   "fields": [
     {
-      "fieldName": "type",
+      "fieldName": "issuertype",
       "fieldType": "String"
     },
     {

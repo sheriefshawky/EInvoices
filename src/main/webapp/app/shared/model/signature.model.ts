@@ -3,7 +3,7 @@ import { IDocument } from 'app/shared/model/document.model';
 export interface ISignature {
   id?: number;
   type?: string | null;
-  value?: string | null;
+  sigValue?: string | null;
   document?: IDocument | null;
 }
 

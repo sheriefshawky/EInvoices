@@ -29,8 +29,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class ReceiverResourceIT {
 
-    private static final String DEFAULT_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_TYPE = "BBBBBBBBBB";
+    private static final String DEFAULT_RECIEVER_TYPE = "AAAAAAAAAA";
+    private static final String UPDATED_RECIEVER_TYPE = "BBBBBBBBBB";
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
@@ -59,7 +59,7 @@ class ReceiverResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Receiver createEntity(EntityManager em) {
-        Receiver receiver = new Receiver().type(DEFAULT_TYPE).name(DEFAULT_NAME);
+        Receiver receiver = new Receiver().recieverType(DEFAULT_RECIEVER_TYPE).name(DEFAULT_NAME);
         return receiver;
     }
 
@@ -70,7 +70,7 @@ class ReceiverResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Receiver createUpdatedEntity(EntityManager em) {
-        Receiver receiver = new Receiver().type(UPDATED_TYPE).name(UPDATED_NAME);
+        Receiver receiver = new Receiver().recieverType(UPDATED_RECIEVER_TYPE).name(UPDATED_NAME);
         return receiver;
     }
 
@@ -92,7 +92,7 @@ class ReceiverResourceIT {
         List<Receiver> receiverList = receiverRepository.findAll();
         assertThat(receiverList).hasSize(databaseSizeBeforeCreate + 1);
         Receiver testReceiver = receiverList.get(receiverList.size() - 1);
-        assertThat(testReceiver.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testReceiver.getRecieverType()).isEqualTo(DEFAULT_RECIEVER_TYPE);
         assertThat(testReceiver.getName()).isEqualTo(DEFAULT_NAME);
     }
 
@@ -126,7 +126,7 @@ class ReceiverResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(receiver.getId().intValue())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)))
+            .andExpect(jsonPath("$.[*].recieverType").value(hasItem(DEFAULT_RECIEVER_TYPE)))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
     }
 
@@ -142,7 +142,7 @@ class ReceiverResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(receiver.getId().intValue()))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE))
+            .andExpect(jsonPath("$.recieverType").value(DEFAULT_RECIEVER_TYPE))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME));
     }
 
@@ -165,7 +165,7 @@ class ReceiverResourceIT {
         Receiver updatedReceiver = receiverRepository.findById(receiver.getId()).get();
         // Disconnect from session so that the updates on updatedReceiver are not directly saved in db
         em.detach(updatedReceiver);
-        updatedReceiver.type(UPDATED_TYPE).name(UPDATED_NAME);
+        updatedReceiver.recieverType(UPDATED_RECIEVER_TYPE).name(UPDATED_NAME);
 
         restReceiverMockMvc
             .perform(
@@ -179,7 +179,7 @@ class ReceiverResourceIT {
         List<Receiver> receiverList = receiverRepository.findAll();
         assertThat(receiverList).hasSize(databaseSizeBeforeUpdate);
         Receiver testReceiver = receiverList.get(receiverList.size() - 1);
-        assertThat(testReceiver.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testReceiver.getRecieverType()).isEqualTo(UPDATED_RECIEVER_TYPE);
         assertThat(testReceiver.getName()).isEqualTo(UPDATED_NAME);
     }
 
@@ -265,7 +265,7 @@ class ReceiverResourceIT {
         List<Receiver> receiverList = receiverRepository.findAll();
         assertThat(receiverList).hasSize(databaseSizeBeforeUpdate);
         Receiver testReceiver = receiverList.get(receiverList.size() - 1);
-        assertThat(testReceiver.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testReceiver.getRecieverType()).isEqualTo(DEFAULT_RECIEVER_TYPE);
         assertThat(testReceiver.getName()).isEqualTo(UPDATED_NAME);
     }
 
@@ -281,7 +281,7 @@ class ReceiverResourceIT {
         Receiver partialUpdatedReceiver = new Receiver();
         partialUpdatedReceiver.setId(receiver.getId());
 
-        partialUpdatedReceiver.type(UPDATED_TYPE).name(UPDATED_NAME);
+        partialUpdatedReceiver.recieverType(UPDATED_RECIEVER_TYPE).name(UPDATED_NAME);
 
         restReceiverMockMvc
             .perform(
@@ -295,7 +295,7 @@ class ReceiverResourceIT {
         List<Receiver> receiverList = receiverRepository.findAll();
         assertThat(receiverList).hasSize(databaseSizeBeforeUpdate);
         Receiver testReceiver = receiverList.get(receiverList.size() - 1);
-        assertThat(testReceiver.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testReceiver.getRecieverType()).isEqualTo(UPDATED_RECIEVER_TYPE);
         assertThat(testReceiver.getName()).isEqualTo(UPDATED_NAME);
     }
 

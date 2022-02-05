@@ -21,8 +21,8 @@ public class Receiver implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "type")
-    private String type;
+    @Column(name = "reciever_type")
+    private String recieverType;
 
     @Column(name = "name")
     private String name;
@@ -46,17 +46,17 @@ public class Receiver implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return this.type;
+    public String getRecieverType() {
+        return this.recieverType;
     }
 
-    public Receiver type(String type) {
-        this.setType(type);
+    public Receiver recieverType(String recieverType) {
+        this.setRecieverType(recieverType);
         return this;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setRecieverType(String recieverType) {
+        this.recieverType = recieverType;
     }
 
     public String getName() {
@@ -109,7 +109,7 @@ public class Receiver implements Serializable {
     public String toString() {
         return "Receiver{" +
             "id=" + getId() +
-            ", type='" + getType() + "'" +
+            ", recieverType='" + getRecieverType() + "'" +
             ", name='" + getName() + "'" +
             "}";
     }

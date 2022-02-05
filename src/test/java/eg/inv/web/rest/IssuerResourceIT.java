@@ -29,8 +29,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class IssuerResourceIT {
 
-    private static final String DEFAULT_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_TYPE = "BBBBBBBBBB";
+    private static final String DEFAULT_ISSUERTYPE = "AAAAAAAAAA";
+    private static final String UPDATED_ISSUERTYPE = "BBBBBBBBBB";
 
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
@@ -59,7 +59,7 @@ class IssuerResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Issuer createEntity(EntityManager em) {
-        Issuer issuer = new Issuer().type(DEFAULT_TYPE).name(DEFAULT_NAME);
+        Issuer issuer = new Issuer().issuertype(DEFAULT_ISSUERTYPE).name(DEFAULT_NAME);
         return issuer;
     }
 
@@ -70,7 +70,7 @@ class IssuerResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Issuer createUpdatedEntity(EntityManager em) {
-        Issuer issuer = new Issuer().type(UPDATED_TYPE).name(UPDATED_NAME);
+        Issuer issuer = new Issuer().issuertype(UPDATED_ISSUERTYPE).name(UPDATED_NAME);
         return issuer;
     }
 
@@ -92,7 +92,7 @@ class IssuerResourceIT {
         List<Issuer> issuerList = issuerRepository.findAll();
         assertThat(issuerList).hasSize(databaseSizeBeforeCreate + 1);
         Issuer testIssuer = issuerList.get(issuerList.size() - 1);
-        assertThat(testIssuer.getType()).isEqualTo(DEFAULT_TYPE);
+        assertThat(testIssuer.getIssuertype()).isEqualTo(DEFAULT_ISSUERTYPE);
         assertThat(testIssuer.getName()).isEqualTo(DEFAULT_NAME);
     }
 
@@ -126,7 +126,7 @@ class IssuerResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(issuer.getId().intValue())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE)))
+            .andExpect(jsonPath("$.[*].issuertype").value(hasItem(DEFAULT_ISSUERTYPE)))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)));
     }
 
@@ -142,7 +142,7 @@ class IssuerResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(issuer.getId().intValue()))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE))
+            .andExpect(jsonPath("$.issuertype").value(DEFAULT_ISSUERTYPE))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME));
     }
 
@@ -165,7 +165,7 @@ class IssuerResourceIT {
         Issuer updatedIssuer = issuerRepository.findById(issuer.getId()).get();
         // Disconnect from session so that the updates on updatedIssuer are not directly saved in db
         em.detach(updatedIssuer);
-        updatedIssuer.type(UPDATED_TYPE).name(UPDATED_NAME);
+        updatedIssuer.issuertype(UPDATED_ISSUERTYPE).name(UPDATED_NAME);
 
         restIssuerMockMvc
             .perform(
@@ -179,7 +179,7 @@ class IssuerResourceIT {
         List<Issuer> issuerList = issuerRepository.findAll();
         assertThat(issuerList).hasSize(databaseSizeBeforeUpdate);
         Issuer testIssuer = issuerList.get(issuerList.size() - 1);
-        assertThat(testIssuer.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testIssuer.getIssuertype()).isEqualTo(UPDATED_ISSUERTYPE);
         assertThat(testIssuer.getName()).isEqualTo(UPDATED_NAME);
     }
 
@@ -251,7 +251,7 @@ class IssuerResourceIT {
         Issuer partialUpdatedIssuer = new Issuer();
         partialUpdatedIssuer.setId(issuer.getId());
 
-        partialUpdatedIssuer.type(UPDATED_TYPE);
+        partialUpdatedIssuer.issuertype(UPDATED_ISSUERTYPE);
 
         restIssuerMockMvc
             .perform(
@@ -265,7 +265,7 @@ class IssuerResourceIT {
         List<Issuer> issuerList = issuerRepository.findAll();
         assertThat(issuerList).hasSize(databaseSizeBeforeUpdate);
         Issuer testIssuer = issuerList.get(issuerList.size() - 1);
-        assertThat(testIssuer.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testIssuer.getIssuertype()).isEqualTo(UPDATED_ISSUERTYPE);
         assertThat(testIssuer.getName()).isEqualTo(DEFAULT_NAME);
     }
 
@@ -281,7 +281,7 @@ class IssuerResourceIT {
         Issuer partialUpdatedIssuer = new Issuer();
         partialUpdatedIssuer.setId(issuer.getId());
 
-        partialUpdatedIssuer.type(UPDATED_TYPE).name(UPDATED_NAME);
+        partialUpdatedIssuer.issuertype(UPDATED_ISSUERTYPE).name(UPDATED_NAME);
 
         restIssuerMockMvc
             .perform(
@@ -295,7 +295,7 @@ class IssuerResourceIT {
         List<Issuer> issuerList = issuerRepository.findAll();
         assertThat(issuerList).hasSize(databaseSizeBeforeUpdate);
         Issuer testIssuer = issuerList.get(issuerList.size() - 1);
-        assertThat(testIssuer.getType()).isEqualTo(UPDATED_TYPE);
+        assertThat(testIssuer.getIssuertype()).isEqualTo(UPDATED_ISSUERTYPE);
         assertThat(testIssuer.getName()).isEqualTo(UPDATED_NAME);
     }
 

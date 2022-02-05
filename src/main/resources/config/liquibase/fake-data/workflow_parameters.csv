@@ -1,4 +1,4 @@
-id;parameter;value;active_from;active_to
+id;parameter;wf_value;active_from;active_to
 1;compressing portals Ports;47920;2022-01-31T06:21:33;2022-01-31T12:38:45
 2;next-generation;36706;2022-01-31T05:27:47;2022-01-31T17:13:43
 3;Uzbekistan;97398;2022-01-31T12:58:58;2022-01-31T10:30:28

@@ -50,7 +50,7 @@ export const Receiver = (props: RouteComponentProps<{ url: string }>) => {
                   <Translate contentKey="eInvoicesApp.receiver.id">ID</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="eInvoicesApp.receiver.type">Type</Translate>
+                  <Translate contentKey="eInvoicesApp.receiver.recieverType">Reciever Type</Translate>
                 </th>
                 <th>
                   <Translate contentKey="eInvoicesApp.receiver.name">Name</Translate>
@@ -69,7 +69,7 @@ export const Receiver = (props: RouteComponentProps<{ url: string }>) => {
                       {receiver.id}
                     </Button>
                   </td>
-                  <td>{receiver.type}</td>
+                  <td>{receiver.recieverType}</td>
                   <td>{receiver.name}</td>
                   <td>{receiver.address ? <Link to={`receiver-address/${receiver.address.id}`}>{receiver.address.id}</Link> : ''}</td>
                   <td className="text-end">

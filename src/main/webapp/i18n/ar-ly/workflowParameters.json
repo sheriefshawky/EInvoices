@@ -19,7 +19,7 @@
       },
       "id": "ID",
       "parameter": "Parameter",
-      "value": "Value",
+      "wfValue": "Wf Value",
       "activeFrom": "Active From",
       "activeTo": "Active To",
       "documentTypeVersion": "Document Type Version"

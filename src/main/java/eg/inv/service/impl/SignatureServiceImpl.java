@@ -41,8 +41,8 @@ public class SignatureServiceImpl implements SignatureService {
                 if (signature.getType() != null) {
                     existingSignature.setType(signature.getType());
                 }
-                if (signature.getValue() != null) {
-                    existingSignature.setValue(signature.getValue());
+                if (signature.getSigValue() != null) {
+                    existingSignature.setSigValue(signature.getSigValue());
                 }
 
                 return existingSignature;

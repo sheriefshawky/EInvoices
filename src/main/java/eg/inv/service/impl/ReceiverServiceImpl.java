@@ -38,8 +38,8 @@ public class ReceiverServiceImpl implements ReceiverService {
         return receiverRepository
             .findById(receiver.getId())
             .map(existingReceiver -> {
-                if (receiver.getType() != null) {
-                    existingReceiver.setType(receiver.getType());
+                if (receiver.getRecieverType() != null) {
+                    existingReceiver.setRecieverType(receiver.getRecieverType());
                 }
                 if (receiver.getName() != null) {
                     existingReceiver.setName(receiver.getName());

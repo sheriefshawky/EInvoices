@@ -36,11 +36,11 @@ export const WorkflowParametersDetail = (props: RouteComponentProps<{ id: string
           </dt>
           <dd>{workflowParametersEntity.parameter}</dd>
           <dt>
-            <span id="value">
-              <Translate contentKey="eInvoicesApp.workflowParameters.value">Value</Translate>
+            <span id="wfValue">
+              <Translate contentKey="eInvoicesApp.workflowParameters.wfValue">Wf Value</Translate>
             </span>
           </dt>
-          <dd>{workflowParametersEntity.value}</dd>
+          <dd>{workflowParametersEntity.wfValue}</dd>
           <dt>
             <span id="activeFrom">
               <Translate contentKey="eInvoicesApp.workflowParameters.activeFrom">Active From</Translate>

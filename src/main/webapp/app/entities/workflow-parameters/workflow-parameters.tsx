@@ -53,7 +53,7 @@ export const WorkflowParameters = (props: RouteComponentProps<{ url: string }>) 
                   <Translate contentKey="eInvoicesApp.workflowParameters.parameter">Parameter</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="eInvoicesApp.workflowParameters.value">Value</Translate>
+                  <Translate contentKey="eInvoicesApp.workflowParameters.wfValue">Wf Value</Translate>
                 </th>
                 <th>
                   <Translate contentKey="eInvoicesApp.workflowParameters.activeFrom">Active From</Translate>
@@ -76,7 +76,7 @@ export const WorkflowParameters = (props: RouteComponentProps<{ url: string }>) 
                     </Button>
                   </td>
                   <td>{workflowParameters.parameter}</td>
-                  <td>{workflowParameters.value}</td>
+                  <td>{workflowParameters.wfValue}</td>
                   <td>
                     {workflowParameters.activeFrom ? (
                       <TextFormat type="date" value={workflowParameters.activeFrom} format={APP_DATE_FORMAT} />
